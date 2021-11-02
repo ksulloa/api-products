@@ -16,4 +16,7 @@ import org.springframework.stereotype.Service
 
             return productsRepository.findAll()
         }
+        fun save(products: Products): Products{
+            return productsRepository.save(products)
+        }
 }

@@ -18,5 +18,9 @@ import org.springframework.web.bind.annotation.*
         fun list(): List<Products>{
             return productsService.list()
         }
+        @PostMapping
+        fun save(@RequestBody products: Products):Products{
+            return productsService.save(products)
+        }
 
     }

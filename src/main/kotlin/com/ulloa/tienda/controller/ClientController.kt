@@ -17,5 +17,9 @@ class ClientController {
     fun list(): List<Client>{
         return clientService.list()
     }
+    @PostMapping
+    fun save(@RequestBody client:Client):Client{
+        return clientService.save(client)
 
+}
 }

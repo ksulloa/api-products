@@ -16,4 +16,7 @@ class ClientService {
 
         return clientRepository.findAll()
     }
+    fun save(client: Client): Client{
+        return clientRepository.save(client)
+}
 }
