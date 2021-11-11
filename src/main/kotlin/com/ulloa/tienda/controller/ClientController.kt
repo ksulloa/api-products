@@ -1,6 +1,7 @@
 package com.ulloa.tienda.controller
 
 import com.ulloa.tienda.model.Client
+import com.ulloa.tienda.model.Products
 import com.ulloa.tienda.service.ClientService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
@@ -22,4 +23,19 @@ class ClientController {
         return clientService.save(client)
 
 }
+    @PutMapping
+    fun update(@RequestBody client: Client): Client {
+        return  clientService.update(client)
+
+    }
+    @PatchMapping
+    fun updateNombre(@RequestBody client: Client): Client {
+        return  clientService.updateNombre(client)
+
+    }
+    @DeleteMapping("/delete/{id}")
+    fun delete (@PathVariable("id") id: Long):Boolean{
+        return clientService.delete(id)
+
+    }
 }

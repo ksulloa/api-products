@@ -4,4 +4,6 @@ import com.ulloa.tienda.model.Products
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface ProductsRepository: JpaRepository<Products, Long> {
+    fun findById(id: Long?): Products?
+
 }

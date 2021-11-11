@@ -22,5 +22,20 @@ import org.springframework.web.bind.annotation.*
         fun save(@RequestBody products: Products):Products{
             return productsService.save(products)
         }
+        @PutMapping
+        fun update(@RequestBody products: Products):Products{
+            return  productsService.update(products)
+
+        }
+        @PatchMapping
+        fun updateDescription(@RequestBody products: Products):Products{
+            return  productsService.updateDescription(products)
+
+        }
+        @DeleteMapping("/delete/{id}")
+        fun delete (@PathVariable("id") id: Long):Boolean{
+            return productsService.delete(id)
+
+        }
 
     }
